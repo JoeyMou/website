@@ -1,0 +1,271 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  
+  <link href="css/style.css" media="all" rel="stylesheet">
+  <script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+  <script type="text/javascript" src="js/MyJs.js"></script>
+</head>
+<body>
+  <header class="site__header">
+    <div class="site__wrapper">
+      <nav class="site__menu">
+        <ul class="menu__list" role="navigation">
+          <div id="menu__logged_in">
+          </div>
+          <div id="menu__logged_out">
+            <li class="menu__item">
+              <a class="menu__link" href="">Learn More</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="">Refer a Friend</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="">Login</a>
+            </li>
+          </div>
+        </ul>
+      </nav>
+      <a class="site__home_link" href="">
+        <h1 class="site__logo">Teespring shirts</h1>
+      </a>
+      <div class="site__search_container">
+        <input autocomplete="off" class="site__search_input" id="search" name="search" placeholder="Search" type="text">
+        <div class="site__search_init ts-icon-search">  
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="site__content_container" id="design-edit">
+    <!-- 导航条 -->
+    <div class="campaign-subheader navbar">
+      <div class="navbar-inner">
+        <div class="wrapper">
+          <div class="container actions-bar">
+            <ul id="launch-progression" class="nav">
+              <li class="active-step">
+                <a data-step="desgin" href="">
+                  1. Create your tee
+                </a>
+              </li>
+              <li>
+                <a data-step="pricing" href="">
+                  2. Set a goal
+                </a>
+              </li>
+              <li>
+                <a data-step="details" href="">
+                  3. Add a description
+                </a>
+              </li>
+            </ul>
+            <ul class="nav pull-right" id="design-actions">
+              <li>
+                <a class="asset-linked" data-action="save" href="">
+                  <i class="icon-save"></i>
+                  Save
+                </a>
+              </li>
+              <li>
+                <a class="asset-linked" data-action="preview" href="">
+                  <i class="icon-eye-open"></i>
+                  Preview
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 主体内容 -->
+    <section id="no-band" class="no-offset">
+      <div class="container container_designer">
+        <div id="designer" class="clearfix">
+          <div class="step" id="step-design">
+            <!-- 左边 -->
+            <div id="design-tools" class="aside">
+              <!-- 切换卡 -->
+              <ul class="tab clearfix nav nav-tabs">
+                <li id="tab1" class="tab active tab-Text" data-name="Text">
+                  <a>
+                    <i class="icon-text-width"></i>
+                    Add Text
+                  </a>
+                </li>
+                <li id="tab2" class="tab tab-Art" data-name="Art">
+                  <a>
+                    <i class="icon-picture"></i>
+                    Add/upload art
+                  </a>
+                </li>
+              </ul>
+              <!-- 文字部分 -->
+              <div id="tab1-content" class="tab-content teespring-well designer-well tab-Text" style="display:none">
+                <div id="text-string" class="control-group">
+                  <label>
+                    Enter text below
+                    <br>
+                    <label class="placeholder">
+                      <span>Add your text here</span>
+                      <textarea id="enter-text" class="placeholder"></textarea>
+                    </label>
+                </div>
+                <div class="control-group">
+                  <label class="">Choose a font</label>
+                  <div id="font-select" class="">
+                    <img src="images/fonts/helvetica.png"></img>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <div class="left">
+                    <label>Text color</label>
+                    <div id="color-select" class="" title="Black">
+                      <div id="txt-color"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="control-group clearifx">
+                  <div class="left">
+                    <label>Add an outline</label>
+                    <select id="outline-select" class="">
+                      <option value="0" selected="selected">No outline</option>
+                      <option value="0.33">Thin outline</option>
+                      <option value="0.66">Medium outline</option>
+                      <option value="1">Thick outline</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <!-- 图片部分 -->
+              <div id="tab2-content" class="tab-content teespring-well designer-well tab-Art">
+                <p>
+                  <a class="btn btn-large btn-primary search">Search for art</a>
+                </p>
+                <div class="hr">
+                  <span>OR</span>
+                </div>
+                <p>
+                  <a id="upload-own-image" class="btn btn-large btn-primary upload">Upload your own</a>
+                </p>
+              </div>
+            </div>
+            <!-- 中间 -->
+            <div id="product-view" data-hasqtip="1">
+              <div class="flip-product">
+                <a class="btn-pill flip">
+                  <i class="icon-rotate"></i>
+                  See Back
+                </a>
+              </div>
+              <div class="canvas front active">
+                <svg id="svg-main" version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin">
+                  <image x="0" y="0" width="530" height="630" xlink:href="images/product_type_1_front.png">
+                  </image>
+                  <path fill="none" stroke="#000000" d="M152,100L372,100L372,430L152,430L152,100" stroke-width="2" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0.3;"></path>
+                  <rect x="151" y="431" width="222" height="21" fill="#000000" style="opacity:0.3">
+                  </rect>
+                  <text x="158" y="443" fill="#ffffff" font-size="11px">
+                    <tspan>Printable Area</tspan>
+                  </text>
+                  <image x="317" y="429" width="55" height="21" xlink:href="images/icons/zoom.png" style="cursor:pointer;">
+                  </image>
+                  <text x="337" y="443" fill="#000000" font-size="11px">
+                    <tspan>zoom</tspan>
+                  </text>
+                </svg>
+              </div>
+              <div class="canvas back inactive"></div>
+            </div>
+            <!-- 右边 -->
+            <div id="choices" class="aside">
+              <!-- 选产品 -->
+              <div id="product-selector" class="teespring-well desiger-well">
+                <label>
+                  <i class="icon-user"></i>
+                  Style & design
+                </label>
+                <select id="item-options-dropdown" class="form-control">
+                  <option value="1" selected>Basic Tees</option>
+                  <option value="3">Long Sleeves</option>
+                  <option value="4">Tank Tops</option>
+                  <option value="5">Hoodies</option>
+                  <option value="6">V-Neck Tees</option>
+                  <option value="8">Specialty</option>
+                  <option value="9">Women's Tees</option>
+                  <option value="11">Premium Tees</option>
+                  <option value="12">Kids</option>
+                  <option value="28">Activewear</option>
+                </select>
+                <ul class="options item-options active nav">
+                  <li class="item-option active" data-id="2">
+                    <p class="item-name">Hanes Tagless Tee</p>
+                    <div class="item-overview">
+                      <div class="item-thumb"></div>
+                      <p class="item-qualities">Budget friendly</p>
+                    </div>
+                  </li>
+                  <li class="item-option" data-id="6">
+                    <p class="item-name">American Apparel Crew</p>
+                    <div class="item-overview">
+                      <div class="item-thumb"></div>
+                      <p class="item-qualities">Top of the line</p>
+                    </div>
+                  </li>
+                  <li class="item-option" data-id="7">
+                    <p class="item-name">Canvas Ringspun Tee</p>
+                    <div class="item-overview">
+                      <div class="item-thumb"></div>
+                      <p class="item-qualities">Premium materials</p>
+                    </div>
+                  </li>
+                  <li class="item-option" data-id="222">
+                    <p class="item-name">Premium Ringspun Tee</p>
+                    <div class="item-overview">
+                      <div class="item-thumb"></div>
+                      <p class="item-qualities">Premium materials</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <!-- 显示价格 -->
+              <div id="price-display" class="teespring-well designer-well">
+                <div id="quote">
+                  <p class="base-cost-intro">Base cost @50 shirts</p>
+                  <p id="price_preview" class="base-cost-display">$5.75</p>
+                </div>
+                <button id="nextPage" class="">Next »</button>
+              </div>
+              <!-- 选颜色 -->
+              <div id="product-colors">
+                <i></i>
+                <ul class="nav">
+                  <li data-id="2122" data-value="#ffffff" class="shirt-color-sample" title="" style="background:#ffffff"></li>
+                  <li data-id="2397" data-value="#1a1a1a" class="shirt-color-sample" title="" style="background:#1a1a1a"></li>
+                  <li data-id="576" data-value="#141525" class="shirt-color-sample" title="" style="background:#141525"></li>
+                  <li data-id="562" data-value="#d4cfc3" class="shirt-color-sample" title="" style="background:#d4cfc3"></li>
+                  <li data-id="569" data-value="#1a2f78" class="shirt-color-sample" title="" style="background:#1a2f78"></li>
+                  <li data-id="568" data-value="#9f0110" class="shirt-color-sample" title="" style="background:#9f0110"></li>
+                  <li data-id="566" data-value="#142510" class="shirt-color-sample" title="" style="background:#142510"></li>
+                  <li data-id="577" data-value="#e54d09" class="shirt-color-sample" title="" style="background:#e54d09"></li>
+                  <li data-id="2232" data-value="#4b256e" class="shirt-color-sample" title="" style="background:#4b256e"></li>
+                  <li data-id="572" data-value="#9dcbeb" class="shirt-color-sample" title="" style="background:#9dcbeb"></li>
+                  <li class="more shirt-color-sample"></li>
+                </ul>                
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div id="preview" style="display:none">
+        </div>
+
+      </div>
+    </section>
+  </div>
+  <footer class="site__footer">
+
+  </footer>
+</body>
+</html>
